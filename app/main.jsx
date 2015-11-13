@@ -16,14 +16,15 @@ module.exports = React.createClass({
    return {};
  },
   componentDidMount: function() {
-    $.get('http://localhost:3000/search/'+this.props.params.player, function(result) {
+    $.get('/test', function(result) {
+    // $.get('http://localhost:3000/search/'+this.props.params.player, function(result) {
       if (this.isMounted()) {
         this.setState(result);
       }
     }.bind(this));
   },
   currentView: function(view) {
-    if (view.indexOf('/future') > -1) {
+    if (view.indexOf('/learn') > -1) {
       return (
         <div>
           <Future player_data={this.state} />

@@ -5,16 +5,16 @@ module.exports = React.createClass({
   displayName: 'datatype_buttons',
   render: function() {
     return (
-      <div className="ui center aligned segment">
+      <div className="ui center aligned inverted segment">
 
         <Link to={'/u/'+this.props.params.player}>
           <button className="big ui inverted blue button">
-            Upgrade
+            Improve
           </button>
         </Link>
-        <Link to={'/u/'+this.props.params.player+'/future'}>
+        <Link to={'/u/'+this.props.params.player+'/learn'}>
           <button className="big ui inverted green button">
-            Research
+            Learn
           </button>
         </Link>
       </div>

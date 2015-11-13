@@ -30,12 +30,12 @@ module.exports = React.createClass({
       <div className="ui grid details_information">
         <div className="three column row">
           <div className="column">
-            <ChampProfile champ={this.props.params.champ || 'Leblanc'} tagline={tagline || 'The Deceiver'} />
+            <ChampProfile champ={this.props.params.champ || 'Leblanc'} tagline={tagline || 'The Deceiver'} details='true' />
           </div>
 
           <div className="ten wide column">
             <div>
-              <table className="ui celled padded table">
+              <table className="ui celled padded inverted table">
                 <thead>
                   <tr>
                     <th>KDA</th>

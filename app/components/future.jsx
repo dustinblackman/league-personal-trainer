@@ -9,7 +9,7 @@ module.exports = React.createClass({
   displayName: 'details',
   uiLabel: function(labels) {
     return R.map(function(label) {
-      return (<div className="ui piled segment">{label}</div>)
+      return (<div className="ui stacked inverted grey segment">{label}</div>)
     }, labels)
   },
   uiSegment: function(suggestion_number, champ_data) {
@@ -18,7 +18,7 @@ module.exports = React.createClass({
     var tagline = CHAMPS[champ].tagline;
 
     return (
-      <div className="ui segment">
+      <div className="ui inverted segment">
         <div className="ui dividing header">Suggested Champion</div>
         <div className="ui grid">
           <div className="row">

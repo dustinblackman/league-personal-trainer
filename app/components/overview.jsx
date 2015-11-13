@@ -16,8 +16,22 @@ module.exports = React.createClass({
 
           <b>{champ_data.name}</b><br />
           <i>{stat_type}</i><br />
-          KDA: <b>{kda}</b><br />
-          Winrate: <b>{winrate}%</b>
+          <div className="ui tiny orange inverted statistic">
+            <div className="value">
+              <i class="plane icon"></i>{kda}
+            </div>
+            <div className="label">
+              KDA
+            </div>
+          </div>
+          <div className="ui tiny yellow inverted statistic">
+            <div className="value">
+              {winrate}%
+            </div>
+            <div className="label">
+              Winrate
+            </div>
+          </div>
         </div>
       </div>
     )
@@ -25,7 +39,7 @@ module.exports = React.createClass({
   render: function() {
     if (!this.props.player_data.name) return (<LoadingSegment />)
     return (
-      <div className="ui segment">
+      <div className="ui inverted segment">
         <div className="ui dividing header">Overview</div>
 
         <div className="ui three column centered grid">

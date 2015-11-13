@@ -7,7 +7,7 @@ module.exports = React.createClass({
     var tagline = this.props.tagline;
 
     return (
-      <div className="champ_profile">
+      <div className={this.props.details ? 'details_champ_profile' : 'champ_profile'}>
         <img className="ui small circular image" src={'https://ddragon.leagueoflegends.com/cdn/5.22.1/img/champion/'+champ+'.png'} />
 
         <b>{champ}</b>

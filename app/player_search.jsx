@@ -20,7 +20,7 @@ module.exports = React.createClass({
         <Nav/>
 
         <div className="ui section divider"></div>
-        <div className="ui middle aligned center aligned grid">
+        <div className="ui center aligned grid">
           <div className="column">
             <h2 className="ui teal image header">
               <div className="content" id="text_header">
@@ -28,19 +28,16 @@ module.exports = React.createClass({
               </div>
             </h2>
             <div className="ui large form" id="form">
-              <div className="ui stacked segment">
-              <form>
-                <div className="field">
-                  <div className="ui left input">
-                    <input type="text" id="summoner_name" placeholder="Search Summoner..." />
+              <div className="ui stacked inverted segment">
+                <form>
+                  <div className="field">
+                    <div className="ui left input">
+                      <input type="text" id="summoner_name" placeholder="Search Summoner..." />
+                    </div>
                   </div>
-                </div>
-                <button className="ui fluid large teal submit button" id="submit_button" type='submit' onClick={this.handleChange}>Search</button>
-              </form>
+                  <button className="ui fluid large teal submit button" id="submit_button" type='submit' onClick={this.handleChange}>Search</button>
+                </form>
               </div>
-
-              <div className="ui error message"></div>
-
             </div>
           </div>
         </div>

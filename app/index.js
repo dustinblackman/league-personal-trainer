@@ -22,7 +22,7 @@ ReactDOM.render(
   <Router history={history}>
     <Route path='/' component={PlayerSearch} />
     <Route path='/u/:player' component={Main}>
-      <Route path='/u/:player/future' />
+      <Route path='/u/:player/learn' />
       <Route path='/u/:player/details/:champ' />
     </Route>
   </Router>,
