@@ -16,10 +16,11 @@ module.exports = React.createClass({
   },
   render: function() {
     return (
-      <div className="ui container">
+      <div className="ui container search">
         <Nav/>
 
         <div className="ui section divider"></div>
+
         <div className="ui center aligned grid">
           <div className="column">
             <h2 className="ui teal image header">
@@ -27,7 +28,7 @@ module.exports = React.createClass({
                 Search up your summoner!
               </div>
             </h2>
-            <div className="ui large form" id="form">
+            <div className="ui medium form" id="form">
               <div className="ui stacked inverted segment">
                 <form>
                   <div className="field">
@@ -35,7 +36,7 @@ module.exports = React.createClass({
                       <input type="text" id="summoner_name" placeholder="Search Summoner..." />
                     </div>
                   </div>
-                  <button className="ui fluid large teal submit button" id="submit_button" type='submit' onClick={this.handleChange}>Search</button>
+                  <button className="ui fluid medium teal submit button" id="submit_button" type='submit' onClick={this.handleChange}>Search</button>
                 </form>
               </div>
             </div>

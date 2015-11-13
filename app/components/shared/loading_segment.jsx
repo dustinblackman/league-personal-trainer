@@ -6,7 +6,7 @@ module.exports = React.createClass({
   render: function() {
     return (
       <div className="ui container">
-        <div className="ui loading segment">
+        <div className="ui loading inverted segment">
           <p></p>
           <p></p>
         </div>
