@@ -17,8 +17,7 @@ var graph_colors = d3.scale.ordinal().range(["#FFFFFF"]);
 module.exports = React.createClass({
   displayName: 'details_information',
   mixins: [ History ],
-  genGraph: function() {
-    var champ = this.props.params.champ;
+  genGraph: function(champ) {
     var champ_id = CHAMPS[champ] ? CHAMPS[champ].id : '';
     var timeseries = this.props.player_data.timeseries[champ_id]
 
@@ -44,6 +43,9 @@ module.exports = React.createClass({
     var champ_id = CHAMPS[champ] ? CHAMPS[champ].id : '';
     var tagline = CHAMPS[champ] ? CHAMPS[champ].tagline : '';
 
+    var selected_champ = this.props.params.champ || this.props.player_data.most_mastered.name;
+    var selected_tagline = tagline || CHAMPS[selected_champ].tagline;
+
     if (this.props.player_data && this.props.player_data.champion_stats) {
       var champ_data = this.props.player_data.champion_stats[champ_id];
 
@@ -58,7 +60,7 @@ module.exports = React.createClass({
       <div className="ui grid details_information">
         <div className="three column row">
           <div className="column">
-            <ChampProfile champ={this.props.params.champ || 'Leblanc'} tagline={tagline || 'The Deceiver'} details='true' />
+            <ChampProfile champ={selected_champ} tagline={selected_tagline} details='true' />
           </div>
 
           <div className="ten wide column">
@@ -82,7 +84,7 @@ module.exports = React.createClass({
             </div>
             <br />
             <div className="details_chart">
-              {this.genGraph()}
+              {this.genGraph(selected_champ)}
             </div>
           </div>
         </div>
