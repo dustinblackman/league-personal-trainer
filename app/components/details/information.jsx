@@ -39,7 +39,7 @@ module.exports = React.createClass({
     var winrate = 0;
     var play_rate = 0;
 
-    var selected_champ = this.props.params.champ || this.props.player_data.most_mastered.name;
+    var selected_champ = this.props.params.champ || this.props.player_data.most_mastered.image.replace(/.png/g, '');
     var tagline = CHAMPS[selected_champ].tagline;
     var champ_id = CHAMPS[selected_champ].id;
 
