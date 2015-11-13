@@ -10,7 +10,7 @@ module.exports = React.createClass({
 
     return (
       <div className="ui inverted segment">
-        <div className="ui dividing header"><span className="strikethrough">Fun</span> Sad Facts</div>
+        <div className="ui dividing header"><span className="strikethrough"><small>Fun</small></span> Sad Facts</div>
 
         <div className="ui five column centered grid">
           <div className="five column row">
