@@ -1,10 +1,9 @@
+var Promise = require('bluebird')
 var bodyParser = require('body-parser');
 var compression = require('compression');
 var express = require('express');
 var helmet = require('helmet');
 var path = require('path');
-
-var fs = require('fs');
 
 var app = express();
 app.use(bodyParser.urlencoded({extended: true, limit: '1000mb'}));

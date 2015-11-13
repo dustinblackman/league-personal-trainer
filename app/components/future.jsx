@@ -1,4 +1,5 @@
 var React = require('react');
+var R = require('ramda');
 
 var ChampProfile = require('./shared/champ_profile.jsx');
 var LoadingSegment = require('./shared/loading_segment.jsx');
@@ -6,8 +7,13 @@ var CHAMPS = require('../../lib/champs.js');
 
 module.exports = React.createClass({
   displayName: 'details',
+  uiLabel: function(labels) {
+    return R.map(function(label) {
+      return (<div className="ui piled segment">{label}</div>)
+    }, labels)
+  },
   uiSegment: function(suggestion_number, champ_data) {
-    var champ = champ_data.name;
+    var champ = champ_data.image.replace(/.png/g, '');
     var champ_id = champ_data.id;
     var tagline = CHAMPS[champ].tagline;
 
@@ -21,12 +27,7 @@ module.exports = React.createClass({
             </div>
 
             <div className="right floated ten wide column">
-              <div className="ui piled segment">
-                {champ_data.labels.join(', ')}
-              </div>
-              <div className="ui piled segment">
-                {champ_data.labels.join(', ')}
-              </div>
+              {this.uiLabel(champ_data.labels)}
             </div>
           </div>
         </div>
