@@ -9,19 +9,25 @@ module.exports = React.createClass({
       return (<div></div>)
     }
 
+    var player_data = this.props.player_data
+
     var image = this.props.player_data.most_mastered.image.replace(/.png/g, '');
     var total_champs = R.length(R.keys(this.props.player_data.champion_stats));
     var total_stats = this.props.player_data.total_stats;
+    var rank = player_data.tier[0] + player_data.tier.substr(1).toLowerCase() + ' ' + player_data.division;
 
     return (
       <div className="ui card">
+        <div className='mastery_icon'>
+          <img src={'/images/mastery_icon.png'} />
+        </div>
         <div className="image card_image">
           <img src={'https://ddragon.leagueoflegends.com/cdn/img/champion/loading/'+image+'_0.jpg'} />
         </div>
         <div className="content">
           <a className="header">{this.props.player_data.name}</a>
           <div className="meta">
-            <span className="date">Diamond II</span>
+            <span className="date">{rank}</span>
           </div>
         </div>
         <div className="extra content">
