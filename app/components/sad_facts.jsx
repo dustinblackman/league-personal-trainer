@@ -27,7 +27,7 @@ module.exports = React.createClass({
                     {facts.top}
                   </div>
                   <div className="label">
-                    Deaths
+                    Deaths Fed
                   </div>
                 </div>
                 <div className="facts_per_game">
