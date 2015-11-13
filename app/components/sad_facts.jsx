@@ -55,7 +55,7 @@ module.exports = React.createClass({
                     {facts.jungle}
                   </div>
                   <div className="label">
-                    CS
+                    Lane CS
                   </div>
                 </div>
                 <div className="facts_per_game">
