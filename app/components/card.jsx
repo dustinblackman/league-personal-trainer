@@ -30,7 +30,7 @@ module.exports = React.createClass({
             <i className="crosshairs icon"></i>{total_stats.kills} Kills<br/>
             <i className="bomb icon"></i>{total_stats.deaths} Deaths<br/>
             <i className="thumbs outline up icon"></i>{total_stats.assists} Assists<br/>
-            <i className="fire icon"></i>{total_stats.cs} Creep Score
+            <i className="fire icon"></i>{total_stats.cs} Creeps
         </div>
       </div>
     )
