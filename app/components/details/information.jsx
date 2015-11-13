@@ -1,12 +1,40 @@
 var React = require('react');
+var rd3 = require('react-d3-components');
+var d3 = require('d3');
+var moment = require('moment');
 var History = require('react-router').History
 
 var ChampProfile = require('../shared/champ_profile.jsx');
 var CHAMPS = require('../../../lib/champs.js');
+var LineChart = rd3.LineChart;
+
+var convertDate = function(time) {
+  return moment(time).format('MM-DD');
+}
+
+var graph_colors = d3.scale.ordinal().range(["#FFFFFF"]);
 
 module.exports = React.createClass({
   displayName: 'details_information',
   mixins: [ History ],
+  genGraph: function() {
+    var champ = this.props.params.champ;
+    var champ_id = CHAMPS[champ] ? CHAMPS[champ].id : '';
+    var timeseries = this.props.player_data.timeseries[champ_id]
+
+    if (!timeseries || !timeseries.length) return (<div></div>)
+
+    var graph_data = [{values: this.props.player_data.timeseries[champ_id]}]
+    return (
+      <LineChart
+        data={graph_data}
+        width={500}
+        xAxis={{tickFormat: convertDate}}
+        height={280}
+        margin={{top: 10, bottom: 50, left: 10, right: 10}}
+        colorScale={graph_colors}/>
+    )
+  },
   render: function() {
     var kda = 0;
     var winrate = 0;
@@ -51,6 +79,10 @@ module.exports = React.createClass({
                   </tr>
                 </tbody>
               </table>
+            </div>
+            <br />
+            <div className="details_chart">
+              {this.genGraph()}
             </div>
           </div>
         </div>
