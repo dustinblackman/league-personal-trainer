@@ -28,7 +28,7 @@ module.exports = React.createClass({
       <LineChart
         data={graph_data}
         width={500}
-        xAxis={{tickFormat: convertDate}}
+        xAxis={{tickFormat: convertDate, tickArguments: [5]}}
         height={280}
         margin={{top: 10, bottom: 50, left: 10, right: 10}}
         colorScale={graph_colors}/>
