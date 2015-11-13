@@ -7,6 +7,7 @@ var Overview = require('./components/overview.jsx');
 var Nav = require('./components/nav.jsx');
 var RecChamps = require('./components/rec_champs.jsx');
 var LoadingSegment = require('./components/shared/loading_segment.jsx');
+var SadFacts = require('./components/sad_facts.jsx');
 
 var Future = require('./components/future.jsx');
 
@@ -36,6 +37,7 @@ module.exports = React.createClass({
           <Overview player_data={this.state} />
           <Details params={this.props.params} player_data={this.state} />
           <RecChamps params={this.props.params} player_data={this.state} />
+          <SadFacts params={this.props.params} player_data={this.state} />
         </div>
       )
     }
