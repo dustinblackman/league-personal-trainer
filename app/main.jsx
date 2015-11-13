@@ -16,8 +16,8 @@ module.exports = React.createClass({
    return {};
  },
   componentDidMount: function() {
-    $.get('/test', function(result) {
-    // $.get('http://localhost:3000/search/'+this.props.params.player, function(result) {
+    // $.get('/test', function(result) {
+    $.get('http://localhost:3000/search/'+this.props.params.player, function(result) {
       if (this.isMounted()) {
         this.setState(result);
       }
