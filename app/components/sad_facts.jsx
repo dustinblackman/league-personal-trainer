@@ -4,7 +4,7 @@ var R = require('ramda');
 module.exports = React.createClass({
   displayName: 'sad_facts',
   render: function() {
-    if (!this.props.player_data.name) return (<div></div>)
+    if (!this.props.player_data.fun_stats) return (<div></div>)
 
     var facts = this.props.player_data.fun_stats;
 
