@@ -57,7 +57,6 @@ module.exports = React.createClass({
       <div className="ui stackable grid">
         <div className="row">
           {this.uiDropdown('uiChamps', 'champion_search', 'Select Champion...', R.keys(champs))}
-          {this.uiDropdown('uiRole', 'role_select', 'Select Role...', roles)}
         </div>
       </div>
     )
