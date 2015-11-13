@@ -22,7 +22,7 @@ module.exports = React.createClass({
     var champ_id = CHAMPS[champ] ? CHAMPS[champ].id : '';
     var timeseries = this.props.player_data.timeseries[champ_id]
 
-    if (!timeseries || !timeseries.length) return (<div></div>)
+    if (!timeseries || timeseries.length <= 1) return (<div></div>)
 
     var graph_data = [{values: this.props.player_data.timeseries[champ_id]}]
     return (
