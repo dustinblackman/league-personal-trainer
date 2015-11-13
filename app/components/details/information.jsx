@@ -39,12 +39,9 @@ module.exports = React.createClass({
     var winrate = 0;
     var play_rate = 0;
 
-    var champ = this.props.params.champ;
-    var champ_id = CHAMPS[champ] ? CHAMPS[champ].id : '';
-    var tagline = CHAMPS[champ] ? CHAMPS[champ].tagline : '';
-
     var selected_champ = this.props.params.champ || this.props.player_data.most_mastered.name;
-    var selected_tagline = tagline || CHAMPS[selected_champ].tagline;
+    var tagline = CHAMPS[selected_champ].tagline;
+    var champ_id = CHAMPS[selected_champ].id;
 
     if (this.props.player_data && this.props.player_data.champion_stats) {
       var champ_data = this.props.player_data.champion_stats[champ_id];
@@ -60,7 +57,7 @@ module.exports = React.createClass({
       <div className="ui grid details_information">
         <div className="three column row">
           <div className="column">
-            <ChampProfile champ={selected_champ} tagline={selected_tagline} details='true' />
+            <ChampProfile champ={selected_champ} tagline={tagline} details='true' />
           </div>
 
           <div className="ten wide column">
